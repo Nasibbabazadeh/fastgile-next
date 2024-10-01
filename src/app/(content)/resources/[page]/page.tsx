@@ -1,4 +1,4 @@
-import CommunityNav from '@/components/community/CommunityNav'
+import ContentNav from '@/components/common/ContentNavBar'
 import { fetchResourcesCount, fetchResourcesQuestions } from '@/services/resourcesServise'
 import Image from 'next/image'
 
@@ -20,7 +20,10 @@ export default async function ResoursePage({ params }: { params: { page: number 
     console.log(resourceData)
     console.log(totalCount)
     return (
-        <section className="max-w-[1184px] mx-auto flex flex-col gap-8 items-end">
+        <section className="max-w-[1184px] mx-auto flex flex-col gap-8 items-end ">
+            <article className="w-full relative left-12 top-4">
+                <h3 className="text-xl-3 text-orange font-medium ">Ən Son Məqalələr</h3>
+            </article>
             {resourceData &&
                 resourceData.map((resource: TResourceData) => {
                     return (
@@ -45,7 +48,7 @@ export default async function ResoursePage({ params }: { params: { page: number 
                         </div>
                     )
                 })}
-            <CommunityNav next={`./${page + 1}`} prev={`./${page - 1}`} isPrevDisabled={isPrevDisabled} isNextDisabled={isNextDisabled} />
+            <ContentNav next={`./${page + 1}`} prev={`./${page - 1}`} isPrevDisabled={isPrevDisabled} isNextDisabled={isNextDisabled} />
         </section>
     )
 }

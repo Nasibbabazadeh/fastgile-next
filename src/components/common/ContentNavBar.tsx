@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
-interface CommunityNavProps {
+interface ContentNavProps {
     next: string
     prev: string
     isPrevDisabled: boolean
     isNextDisabled: boolean
 }
 
-export default function CommunityNav({ next, prev, isPrevDisabled, isNextDisabled }: CommunityNavProps) {
+export default function ContentNav({ next, prev, isPrevDisabled, isNextDisabled }: ContentNavProps) {
     return (
         <div className="flex gap-3 items-center">
             {isPrevDisabled ? (

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function CommonHeader() {
     return (
-        <header className="max-w-[1385px] mx-auto flex justify-between items-center my-5">
+        <header className="max-w-[1385px] mx-auto flex justify-between items-center my-10">
             <Link href="/" className="flex gap-1 items-end text-nowrap">
                 <Image src="/static/fastgile-icon.svg" alt="fastgile-icon" width={65} height={60} />
                 <div className="flex flex-col gap-1">

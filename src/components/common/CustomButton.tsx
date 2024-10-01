@@ -3,21 +3,21 @@ import React from 'react'
 type ButtonVariant = 'primary' | 'secondary' | 'danger'
 type ButtonSize = 'small' | 'medium' | 'large'
 
-interface CustomButtonProps {
-    variant?: ButtonVariant
-    size?: ButtonSize
+interface CustomButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    variant: ButtonVariant
+    size: ButtonSize
     children: React.ReactNode
-    onClick?: () => void
-    disabled?: boolean
-    className?: string
+    onClick: () => void
+    disabled: boolean
+    className: string
 }
 
-const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize = 'medium', disabled: boolean = false) => {
+const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize = 'small', disabled: boolean = false) => {
     const baseStyles = 'font-bold rounded-lg transition duration-300 ease-in-out'
     const variantStyles = {
         primary: 'bg-blue-600 text-white hover:bg-blue-700',
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',
-        danger: 'bg-red-600 text-white hover:bg-red-700',
+        danger: '',
     }
     const sizeStyles = {
         small: 'px-4 py-2 text-sm',
@@ -29,9 +29,17 @@ const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize =
     return `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabledStyles}`
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'primary', size = 'medium', children, onClick, disabled = false, className = '' }) => {
+const CustomButton: React.FC<Partial<CustomButtonProps>> = ({
+    variant = 'primary',
+    size = 'medium',
+    children,
+    onClick,
+    disabled = false,
+    className = '',
+    ...restProps
+}) => {
     return (
-        <button className={`${getButtonClasses(variant, size, disabled)} ${className}`} onClick={onClick} disabled={disabled}>
+        <button className={`${getButtonClasses(variant, size, disabled)} ${className}`} onClick={onClick} disabled={disabled} {...restProps}>
             {children}
         </button>
     )

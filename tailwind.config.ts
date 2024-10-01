@@ -6,6 +6,12 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  screens: {
+    'sm':{'min': '360px', 'max': '767px'},
+    'md': {'min': '768px', 'max': '1023px'},
+    'xl': {'min': '1024px', 'max': '1280px'},
+    '2xl': {'min': '1280px'},
+  },
   theme: {
     fontSize:{
       xs: ['14px', '22px'],
@@ -15,7 +21,9 @@ const config: Config = {
       lg: ['22px', '26px'],
       'lg-2':['24px','28px'],
       xl: ['26px', '32px'],
-      xxl:['24px','32px'],
+      'xl-2':['24px','32px'],
+      'xl-3' :['28px','34px']
+
     },
     extend: {
       colors: {
@@ -25,7 +33,10 @@ const config: Config = {
         "text-color" :'#2C2C2C',
         'text-gray':'#979797',
         'gray-60': '#9E9E9E',
-        'gray-30':'#3E3E3E'
+        'gray-30':'#3E3E3E',
+        'raging-leaf':'#DC5400',
+        'white-secondary':'#EAEAEA80',
+
       },
       borderRadius:{
         xs :'10px',
