@@ -4,29 +4,30 @@ import Link from 'next/link'
 
 export default function Footer() {
     return (
-        <footer className="bg-[#2D2D2D] h-[200px] flex items-center">
+        <footer className="bg-[#2D2D2D] h-[150px] flex items-center mt-7">
             <div className="max-w-[1264px] w-full mx-auto flex justify-between text-white items-center">
                 <Image src="/static/fastgile-white-icon.svg" alt="fastgile-icon" width={88} height={75} />
                 <div className="flex flex-col gap-12 items-center">
                     <nav>
-                        <ul className="flex items-center text-lg font-medium gap-4">
+                        <ul className="flex items-center text-lg font-medium gap-5">
                             <li>
-                                <Link href="/about">Haqqımızda &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp; </Link>
+                                <Link href="/about">Haqqımızda </Link>
                             </li>
+                            <hr className="border-[1px] h-4 border-white" />
                             <li>
-                                <Link href="resources/0">Resurslar &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp; </Link>
+                                <Link href="resources/0">Resurslar </Link>
                             </li>
-                            <hr />
+                            <hr className="border-[1px] h-4 border-white" />
                             <li>
                                 <Link href="/">Əlaqə</Link>
                             </li>
                         </ul>
                     </nav>
-                    <h6 className="text-sm">Copyright © 2023 Suleyman Jabrayilzade</h6>
+                    <h6 className="text-sm">Copyright © {new Date().getFullYear()} Suleyman Jabrayilzade</h6>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 relative top-9">
                     <LinkedinVector fill="black" />
-                    <a href="https://www.linkedin.com/company/fastgileorg/posts/?feedView=all" className="underline-offset-4 underline">
+                    <a href="https://www.linkedin.com/company/fastgileorg/posts/?feedView=all" className="underline-offset-4 underline ">
                         Connect Fastgile on Linkedin
                     </a>
                 </div>
