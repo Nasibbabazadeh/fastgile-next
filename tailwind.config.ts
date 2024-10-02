@@ -5,7 +5,6 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {
@@ -28,7 +27,8 @@ const config: Config = {
     extend: {
       boxShadow: {
         'custom-button-shadow': '0px 18px 40px -12px rgba(62, 189, 255, 0.45)',
-        'dot-shadow':'0px 18px 40px -12px #FF75B759'
+        'dot-shadow':'0px 18px 40px -12px #FF75B759',
+        'resource-card':' 0px 2px 8px 0px #136A9B26',
       },
       backgroundImage: {
         'custom-gradient-button': 'linear-gradient(95.34deg, #FF6E14 0%, rgba(255, 142, 0, 0.7) 100%)',
@@ -37,7 +37,6 @@ const config: Config = {
       },
       colors: {
         white : '#fff',
-        orange : '#DC5400',
         'orange-60':'#FF6E14',
         "text-color" :'#2C2C2C',
         'text-gray':'#979797',

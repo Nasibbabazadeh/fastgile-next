@@ -15,7 +15,7 @@ interface CustomButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttr
 const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize = 'small', disabled: boolean = false) => {
     const baseStyles = 'font-semibold rounded-sm transition duration-300 ease-in-out'
     const variantStyles = {
-        primary: 'text-white bg-custom-gradient-button shadow-custom-button-shadow hover:bg-orange',
+        primary: 'text-white bg-custom-gradient-button shadow-custom-button-shadow hover:bg-raging-leaf',
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',
         danger: '',
     }

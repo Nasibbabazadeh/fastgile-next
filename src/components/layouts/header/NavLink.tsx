@@ -19,7 +19,7 @@ export default function NavLinkComponent() {
                         <Link
                             href={href}
                             className={`transition-all ease-linear text-md text-gray-30 ${
-                                pathname === href ? 'border-b-2 border-b-orange' : 'hover:border-b-2 hover:border-b-orange-60'
+                                pathname === href ? 'border-b-2 border-b-raging-leaf' : 'hover:border-b-2 hover:border-b-orange-60'
                             }`}
                         >
                             {label}

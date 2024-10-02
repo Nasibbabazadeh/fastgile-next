@@ -24,8 +24,8 @@ export default async function Testquestion({ params }: { params: { question: str
     const examData: TExamData[] = await getData()
     const paginatedData = examData.slice(startIndex, endIndex)
     return (
-        <div className="w-full h-screen flex flex-col justify-center items-center">
-            <div className="max-w-[1072px] w-full  px-12 py-8 mx-auto  flex flex-col gap-6 border-l-4 border-l-orange-light rounded-[20px] shadow-exam-card-shadow">
+        <div className="h-screen flex flex-col justify-center items-center">
+            <div className="max-w-[1072px] w-full  px-12 py-8 mx-auto  flex flex-col gap-6 border-l-4 border-l-orange-60 rounded-[20px] shadow-custom-button-shadow">
                 {/* TIME AND LENGTH */}
                 <div className="flex items-center w-[58%] justify-between">
                     <span className="text-lg text-text-color-primary">
@@ -49,7 +49,7 @@ export default async function Testquestion({ params }: { params: { question: str
                         {question > 1 && (
                             <Link
                                 href={`./${question - 1}`}
-                                className="rounded-[10px] border-b-4 border-b-raging-leaf py-4 px-6 bg-orange-light flex items-center gap-3 mr-2"
+                                className="rounded-[10px] border-b-4 border-b-raging-leaf py-4 px-6 bg-orange-60 flex items-center gap-3 mr-2"
                             >
                                 <LeftArrow />
                                 <span className="text-text2 font-medium text-white">Əvvəlki</span>
@@ -58,7 +58,7 @@ export default async function Testquestion({ params }: { params: { question: str
                         {endIndex < examData.length ? (
                             <Link
                                 href={`./${question + 1}`}
-                                className="rounded-[10px] border-b-4 border-b-raging-leaf py-4 px-6 bg-orange-light flex items-center gap-3 ml-2"
+                                className="rounded-[10px] border-b-4 border-b-raging-leaf py-4 px-6 bg-orange-60 flex items-center gap-3 ml-2"
                             >
                                 <span className="text-text2 font-medium text-white">Sonrakı</span>
                                 <RightArrow />
