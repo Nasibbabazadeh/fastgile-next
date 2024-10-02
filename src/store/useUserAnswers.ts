@@ -11,7 +11,6 @@ const useUserAnswersStore = create<UserAnswerState>()(
   persist(
     (set) => ({
       userAnswers: {},
-
       setUserAnswer: (questionId: string, answer: string) =>
         set((state) => ({
           userAnswers: {

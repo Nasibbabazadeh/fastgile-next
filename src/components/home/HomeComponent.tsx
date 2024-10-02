@@ -54,7 +54,7 @@ export default function HomeComponent() {
                             Sınaq imtahanı <span className="text-orange-60">20 sualdan</span> ibarətdir və imtahanı bitirmək üçün
                             <span className="text-orange-60"> 30 dəqiqə</span> vaxtınız var.
                         </p>
-                        <ExamModal href="/" />
+                        <ExamModal href="/exam/simple/0" />
                     </article>
                     <article className="flex flex-col items-center w-[42%] gap-8 text-center xl:w-[35%] md:w-[50%] sm:w-full">
                         <div className="py-3 pl-8 pr-5  rounded-[50%] bg-[#FFECE0] shadow-dot-shadow ">
@@ -66,7 +66,7 @@ export default function HomeComponent() {
                             Sınaq imtahanı <span className="text-orange-60">10 sualdan</span> ibarətdir və imtahanı bitirmək üçün
                             <span className="text-orange-60"> 30 dəqiqə</span> vaxtınız var.
                         </p>
-                        <ExamModal href="/" />
+                        <ExamModal href="/exam/hard/0" />
                     </article>
                 </section>
             </div>

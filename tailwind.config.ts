@@ -29,6 +29,7 @@ const config: Config = {
         'custom-button-shadow': '0px 18px 40px -12px rgba(62, 189, 255, 0.45)',
         'dot-shadow':'0px 18px 40px -12px #FF75B759',
         'resource-card':' 0px 2px 8px 0px #136A9B26',
+        'exam-card': '0px 4px 40px 0px #00000040'
       },
       backgroundImage: {
         'custom-gradient-button': 'linear-gradient(95.34deg, #FF6E14 0%, rgba(255, 142, 0, 0.7) 100%)',
