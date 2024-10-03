@@ -5,6 +5,7 @@ import { TExamData } from '../type'
 import AllQuestionsModal from './exam-modals/AllQuestionsModal'
 import RadioGroup from './RadioGroup'
 import SelectedQuestionsModal from './exam-modals/SelectedQuestionsModal'
+import ExitExamModal from './exam-modals/ExitExamModal'
 
 interface TestQuestionProps {
     questionNumber: number
@@ -35,14 +36,15 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
         <div className="h-screen flex flex-col justify-center items-center">
             <div className="max-w-[1072px] w-full px-12 py-8 mx-auto flex flex-col gap-8 border-l-4  border-l-orange-60 rounded-[20px] shadow-exam-card">
                 {/* TIME AND LENGTH */}
-                <div className="flex items-center w-[58%] justify-between">
+                <div className="flex items-center  justify-between">
                     <span className="text-lg text-[#252B42]">
                         {question}/{examData.length}
                     </span>
                     <span className="text-md text-[#0094E8] font-medium text-nowrap">Qalan Zaman :&nbsp; 29:59</span>
+                    <ExitExamModal />
                 </div>
                 {/* Selected AND All Questions */}
-                <div className="flex justify-around relative">
+                <div className="flex justify-between relative">
                     <SelectedQuestionsModal indexOfQuestion={questionNumber} questionDescription={paginatedData[0]?.description} />
                     <AllQuestionsModal type={type} />
                 </div>

@@ -5,13 +5,13 @@ import CustomButton from './CustomButton'
 interface TCustomModal {
     buttonContent: string | React.ReactNode
     children: React.ReactNode
-    exitContent?: string | React.ReactNode
-    exitStyle?: string
-    variant?: 'primary' | 'secondary'
+    exitContent: string | React.ReactNode
+    exitStyle: string
+    variant: 'primary' | 'secondary' | 'danger'
     modalStyle: string
 }
 
-export default function CustomModal({ variant, buttonContent, exitStyle, exitContent, modalStyle, children }: TCustomModal) {
+export default function CustomModal({ variant, buttonContent, exitStyle, exitContent, modalStyle, children }: Partial<TCustomModal>) {
     const [showModal, setShowModal] = React.useState(false)
 
     return (

@@ -37,12 +37,12 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
 
     return (
         <>
-            <CustomButton onClick={handleSelectedQuestions} className="flex items-center gap-2 bg-none" variant="secondary">
+            <button onClick={handleSelectedQuestions} className="flex items-center gap-2 bg-none">
                 <FlagIcon alt="flag-icon" />
-                <span className="text-md text-[#0094E8] font-medium text-nowrap">
+                <span className="text-md text-[#0094E8] font-medium text-nowrap underline underline-offset-8">
                     {selectedQuestions.find((question) => question.index === indexOfQuestion) ? 'Sualı sil' : 'Sualı işarələ'}
                 </span>
-            </CustomButton>
+            </button>
 
             {/* Modal to show selected questions */}
             <CustomModal

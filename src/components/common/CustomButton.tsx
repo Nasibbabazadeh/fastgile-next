@@ -17,7 +17,7 @@ const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize =
     const variantStyles = {
         primary: 'text-white bg-custom-gradient-button shadow-custom-button-shadow hover:bg-raging-leaf',
         secondary: 'border-x-[1px] border-b-4 border-t-[1px] border-[#313131] rounded-xs flex items-center gap-2',
-        danger: '',
+        danger: 'rounded-[4px] border-b-4 border-b-[#D00000] py-1 px-2 bg-[#FB1230] hover:bg-red-600 transition-all ease-linear font-semibold  text-white text-xs',
     }
     const sizeStyles = {
         small: 'px-4 py-2 text-sm',
@@ -45,6 +45,7 @@ const CustomButton: React.FC<Partial<CustomButtonProps>> = ({
             disabled={disabled}
             {...restProps}
         >
+            <p></p>
             {children}
         </button>
     )
