@@ -1,10 +1,9 @@
 import { DoubleArrowRight, FlagIcon, LeftArrow, RightArrow } from '@/assets'
-import Link from 'next/link'
-import RadioGroup from './RadioGroup'
-import { TExamData } from '../type'
 import API from '@/http/api'
-import AllQuestionsCard from './AllQuestionsCard'
-import CustomButton from '@/components/common/CustomButton'
+import Link from 'next/link'
+import { TExamData } from '../type'
+import RadioGroup from './RadioGroup'
+import AllQuestionsModal from './AllQuestionsModal'
 
 interface TestQuestionProps {
     questionNumber: number
@@ -50,13 +49,7 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
                         <FlagIcon alt="flag-choosen-questions" />
                         <span className="text-sm text-raging-leaf font-medium">İşarələnmiş Suallar</span>
                     </Link>
-                    <Link
-                        href="./all"
-                        className="ml-[5px] px-6 border-x-[1px] border-b-4 border-t-[1px] border-orange-60 rounded-xs flex items-center gap-2"
-                    >
-                        <span className="text-sm text-raging-leaf font-medium py-1">Bütün Suallar</span>
-                        <DoubleArrowRight alt="all-questions-arrow" />
-                    </Link>
+                    <AllQuestionsModal type={type} />
                 </div>
                 <div className="flex flex-col gap-6">
                     {/* Returned Data */}
