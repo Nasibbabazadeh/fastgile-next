@@ -3,7 +3,7 @@ import { TExamData } from '../type'
 import API from '@/http/api'
 import Link from 'next/link'
 
-export default async function AllQuestionsCard({ type }: { type: string }) {
+export default async function AllFlaggedQuestions({ type }: { type: string }) {
     async function getData() {
         'use server'
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${API.exam_questions}?level=${type}`, {
