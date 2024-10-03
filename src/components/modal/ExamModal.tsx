@@ -7,7 +7,7 @@ export default function ExamModal({ href }: any) {
     return (
         <>
             <CustomModal buttonContent="Başla" modalStyle="p-8">
-                <div className="max-w-[700px] bg-white ">
+                <div className="max-w-[800px] p-8 bg-white rounded-md ">
                     <div className="w-[90%] mx-auto h-24 bg-[#f2f2f2] flex justify-center items-center  my-12 px-2">
                         <p className="text-center text-[#333] text-[18px] ">
                             Imtahan nəticənizin <strong className="text-[#06c] font-bold text-sm">&quot;Leadership board&quot;</strong> siyahısında

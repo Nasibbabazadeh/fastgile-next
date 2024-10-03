@@ -1,9 +1,10 @@
-import { DoubleArrowRight, FlagIcon, LeftArrow, RightArrow } from '@/assets'
+import { LeftArrow, RightArrow } from '@/assets'
 import API from '@/http/api'
 import Link from 'next/link'
 import { TExamData } from '../type'
+import AllQuestionsModal from './exam-modals/AllQuestionsModal'
 import RadioGroup from './RadioGroup'
-import AllQuestionsModal from './AllQuestionsModal'
+import SelectedQuestionsModal from './exam-modals/SelectedQuestionsModal'
 
 interface TestQuestionProps {
     questionNumber: number
@@ -32,7 +33,7 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
 
     return (
         <div className="h-screen flex flex-col justify-center items-center">
-            <div className="max-w-[1072px] w-full px-12 py-8 mx-auto flex flex-col gap-6 border-l-4  border-l-orange-60 rounded-[20px] shadow-exam-card">
+            <div className="max-w-[1072px] w-full px-12 py-8 mx-auto flex flex-col gap-8 border-l-4  border-l-orange-60 rounded-[20px] shadow-exam-card">
                 {/* TIME AND LENGTH */}
                 <div className="flex items-center w-[58%] justify-between">
                     <span className="text-lg text-[#252B42]">
@@ -41,27 +42,25 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
                     <span className="text-md text-[#0094E8] font-medium text-nowrap">Qalan Zaman :&nbsp; 29:59</span>
                 </div>
                 {/* Selected AND All Questions */}
-                <div className="flex justify-center">
-                    <Link
-                        href="./all"
-                        className="mr-[5px] px-4 border-x-[1px] border-b-4 border-t-[1px] border-orange-60 rounded-xs flex items-center gap-2 py-3"
-                    >
-                        <FlagIcon alt="flag-choosen-questions" />
-                        <span className="text-sm text-raging-leaf font-medium">İşarələnmiş Suallar</span>
-                    </Link>
+                <div className="flex justify-around relative">
+                    <SelectedQuestionsModal indexOfQuestion={questionNumber} questionDescription={paginatedData[0]?.description} />
                     <AllQuestionsModal type={type} />
                 </div>
                 <div className="flex flex-col gap-6">
                     {/* Returned Data */}
                     {paginatedData.length > 0 &&
-                        paginatedData.map((question: TExamData) => (
-                            <div key={question.id}>
-                                <h6 className="text-md font-medium text-start sm:text-wrap">
-                                    {questionNumber}.&nbsp;{question.description}
-                                </h6>
-                                <RadioGroup answers={question.answers} questionId={question.id} />
-                            </div>
-                        ))}
+                        paginatedData.map((question: TExamData) => {
+                            return (
+                                <div key={question.id}>
+                                    <article className="flex items-center gap-2">
+                                        <h6 className="text-md font-medium text-start sm:text-wrap">
+                                            {questionNumber}.&nbsp;{question.description}
+                                        </h6>
+                                    </article>
+                                    <RadioGroup answers={question.answers} questionId={question.id} />
+                                </div>
+                            )
+                        })}
 
                     {/* Previous and Next Slide Section */}
                     <section className="flex justify-center items-center">

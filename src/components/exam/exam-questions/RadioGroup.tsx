@@ -14,7 +14,6 @@ const RadioGroup = ({ answers, questionId }: RadioGroupProps) => {
     const handleAnswers = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserAnswer(questionId, e.target.value)
     }
-    console.log(userAnswers)
     return (
         <article>
             {answers.map((answer: TAnswer) => (

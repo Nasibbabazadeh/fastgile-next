@@ -16,7 +16,7 @@ const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize =
     const baseStyles = 'font-semibold rounded-sm transition duration-300 ease-in-out'
     const variantStyles = {
         primary: 'text-white bg-custom-gradient-button shadow-custom-button-shadow hover:bg-raging-leaf',
-        secondary: 'border-x-[1px] border-b-4 border-t-[1px] border-orange-60 rounded-xs flex items-center gap-2',
+        secondary: 'border-x-[1px] border-b-4 border-t-[1px] border-[#313131] rounded-xs flex items-center gap-2',
         danger: '',
     }
     const sizeStyles = {

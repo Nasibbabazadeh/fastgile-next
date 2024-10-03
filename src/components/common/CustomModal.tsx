@@ -3,9 +3,9 @@ import React from 'react'
 import CustomButton from './CustomButton'
 
 interface TCustomModal {
-    buttonContent: string
+    buttonContent: string | React.ReactNode
     children: React.ReactNode
-    exitContent?: string
+    exitContent?: string | React.ReactNode
     exitStyle?: string
     variant?: 'primary' | 'secondary'
     modalStyle: string
