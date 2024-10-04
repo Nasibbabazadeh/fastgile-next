@@ -1,10 +1,9 @@
 'use client'
-import { useState, useEffect } from 'react'
 import { FlagIcon, PlayArrow, RightArrowIcon } from '@/assets'
 import CustomModal from '@/components/common/CustomModal'
 import { useSelectedQuestions } from '@/store/useSelectedQuestions'
-import CustomButton from '@/components/common/CustomButton'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 interface TSelectedQuestions {
     index: number
