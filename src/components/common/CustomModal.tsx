@@ -1,22 +1,33 @@
-'use client'
-import React from 'react'
-import CustomButton from './CustomButton'
+"use client"
+import React from "react"
+import CustomButton, { TButtonSize, TButtonVariant } from "./CustomButton"
 
 interface TCustomModal {
     buttonContent: string | React.ReactNode
     children: React.ReactNode
     exitContent: string | React.ReactNode
     exitStyle: string
-    variant: 'primary' | 'secondary' | 'danger'
+    variant: TButtonVariant
     modalStyle: string
+    buttonStyle: string
+    buttonSize: TButtonSize
 }
 
-export default function CustomModal({ variant, buttonContent, exitStyle, exitContent, modalStyle, children }: Partial<TCustomModal>) {
+export default function CustomModal({
+    buttonSize,
+    variant,
+    buttonContent,
+    exitStyle,
+    exitContent,
+    modalStyle,
+    buttonStyle,
+    children,
+}: Partial<TCustomModal>) {
     const [showModal, setShowModal] = React.useState(false)
 
     return (
         <>
-            <CustomButton onClick={() => setShowModal(true)} variant={variant}>
+            <CustomButton onClick={() => setShowModal(true)} variant={variant} className={buttonStyle} size={buttonSize}>
                 {buttonContent}
             </CustomButton>
             {showModal && (

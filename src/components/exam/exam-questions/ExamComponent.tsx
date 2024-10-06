@@ -1,16 +1,12 @@
 import { LeftArrow, RightArrow } from '@/assets'
 import API from '@/http/api'
 import Link from 'next/link'
-import { TExamData } from '../type'
+import { TestQuestionProps, TExamData } from '../type'
 import AllQuestionsModal from './exam-modals/AllQuestionsModal'
-import RadioGroup from './RadioGroup'
-import SelectedQuestionsModal from './exam-modals/SelectedQuestionsModal'
 import ExitExamModal from './exam-modals/ExitExamModal'
-
-interface TestQuestionProps {
-    questionNumber: number
-    type: string
-}
+import SelectedQuestionsModal from './exam-modals/SelectedQuestionsModal'
+import RadioGroup from './RadioGroup'
+import EndExamModal from './exam-modals/EndExamModal'
 
 export default async function ExamComponent({ questionNumber, type }: TestQuestionProps): Promise<JSX.Element> {
     const question = questionNumber || 1
@@ -28,7 +24,6 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
         const data = await response.json()
         return data
     }
-
     const examData: TExamData[] = await getData()
     const paginatedData = examData.slice(startIndex, endIndex)
 
@@ -84,12 +79,7 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
                                 <RightArrow />
                             </Link>
                         ) : (
-                            <Link
-                                href={`./`}
-                                className="rounded-[10px] border-b-4 border-b-[#D00000] py-4 px-6 bg-[#FB1230] flex items-center gap-3 ml-2 hover:bg-red-dark transition-all ease-linear "
-                            >
-                                <span className="text-[18px] leading-6 font-medium text-white">İmtahanı bitir</span>
-                            </Link>
+                            <EndExamModal examData={examData} />
                         )}
                     </section>
                 </div>

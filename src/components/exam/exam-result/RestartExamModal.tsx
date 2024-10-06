@@ -4,27 +4,26 @@ import CustomModal from "@/components/common/CustomModal"
 import useUserAnswersStore from "@/store/useUserAnswers"
 import { useRouter } from "next/navigation"
 
-export default function ExitExamModal() {
+export default function RestartExamModal() {
     const router = useRouter()
     const resetUserAnswers = useUserAnswersStore().resetAnswers
-    const handleExit = () => {
+    const handleReset = () => {
         resetUserAnswers()
-        router.push("/")
+        localStorage.removeItem("exam-result-data")
+        router.push("./0")
     }
     return (
         <>
             <CustomModal
-                variant="danger"
-                buttonContent="İmtahandan çıx"
+                variant="exam"
+                buttonContent="İmtahana yenidən başla"
                 modalStyle="h-[220px] shadow-exam-card bg-white rounded-xs p-10 relative"
                 exitContent={"Xeyir"}
                 exitStyle="absolute bottom-5 right-5"
-                buttonStyle="py-1 px-2 text-xs"
-                buttonSize="extra-small"
             >
                 <div>
-                    <h6 className="text-md font-bold">İmtahandan çıxmaq istədiyinizə əminsiniz?</h6>
-                    <CustomButton variant="secondary" className="absolute left-5 bottom-5" onClick={handleExit}>
+                    <h6 className="text-md font-bold">Məlumatlarınız silinəcək. Əminsiniz?</h6>
+                    <CustomButton variant="exam" size="xs" className="absolute left-5 bottom-5" onClick={handleReset}>
                         Bəli
                     </CustomButton>
                 </div>

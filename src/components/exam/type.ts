@@ -9,3 +9,13 @@ export type TExamData = {
     limit: number
     type: string
 }
+
+export type RadioGroupProps = {
+    answers: TAnswer[]
+    questionId: string
+}
+
+export type TestQuestionProps =  {
+    questionNumber: number
+    type: string
+}

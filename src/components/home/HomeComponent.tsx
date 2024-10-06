@@ -1,7 +1,7 @@
-import { ArrowToTop } from '@/assets'
-import CustomButton from '@/components/common/CustomButton'
-import ExamModal from '@/components/modal/ExamModal'
-import Image from 'next/image'
+import { ArrowToTop } from "@/assets"
+import CustomButton from "@/components/common/CustomButton"
+import ExamModal from "@/components/modal/ExamModal"
+import Image from "next/image"
 export default function HomeComponent() {
     return (
         <div className="flex flex-col gap-18 max-w-[1350px] h-full mx-auto mb-28 relative">

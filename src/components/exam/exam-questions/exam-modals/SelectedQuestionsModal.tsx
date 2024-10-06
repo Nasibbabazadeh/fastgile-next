@@ -1,9 +1,9 @@
-'use client'
-import { FlagIcon, PlayArrow, RightArrowIcon } from '@/assets'
-import CustomModal from '@/components/common/CustomModal'
-import { useSelectedQuestions } from '@/store/useSelectedQuestions'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+"use client"
+import { FlagIcon, PlayArrow, RightArrowIcon } from "@/assets"
+import CustomModal from "@/components/common/CustomModal"
+import { useSelectedQuestions } from "@/store/useSelectedQuestions"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 interface TSelectedQuestions {
     index: number
@@ -15,8 +15,8 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
     const [parsedSelectedQuestions, setParsedSelectedQuestions] = useState<TSelectedQuestions[]>([])
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const selectedQuestionsData = sessionStorage.getItem('selected-questions-storage')
+        if (typeof window !== "undefined") {
+            const selectedQuestionsData = sessionStorage.getItem("selected-questions-storage")
             if (selectedQuestionsData) {
                 const parsedData = JSON.parse(selectedQuestionsData).state.selectedQuestions
                 setParsedSelectedQuestions(parsedData)
@@ -39,7 +39,7 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
             <button onClick={handleSelectedQuestions} className="flex items-center gap-2 bg-none">
                 <FlagIcon alt="flag-icon" />
                 <span className="text-md text-[#0094E8] font-medium text-nowrap underline underline-offset-8">
-                    {selectedQuestions.find((question) => question.index === indexOfQuestion) ? 'Sualı sil' : 'Sualı işarələ'}
+                    {selectedQuestions.find((question) => question.index === indexOfQuestion) ? "Sualı sil" : "Sualı işarələ"}
                 </span>
             </button>
 
@@ -59,7 +59,7 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
                     </div>
                 }
                 exitStyle="absolute right-14"
-                modalStyle="h-[600px] overflow-auto rounded-[20px] shadow-exam-card bg-white relative flex flex-col gap-8 mt-6 p-8"
+                modalStyle="h-[600px] w-[724px] overflow-auto rounded-[20px] shadow-exam-card bg-white relative flex flex-col gap-8 mt-6 p-8"
             >
                 <div className="flex justify-between">
                     <h6 className="text-md font-medium ml-3">Naviqasiya etmək üçün suala klikləyin:</h6>
@@ -87,7 +87,7 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
                         </Link>
                     ))
                 ) : (
-                    <p className="text-sm text-gray-500">No selected questions yet.</p>
+                    <p className="text-sm text-gray-500">Sizin işarələnmiş sualınız yoxdur.</p>
                 )}
             </CustomModal>
         </>

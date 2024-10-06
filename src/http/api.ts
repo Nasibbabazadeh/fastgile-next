@@ -16,8 +16,5 @@ const API = {
     'leadership-board-2' :'leadership-board/out?',
     'community-details' :'community-reply/read-info?',
     'community-reply':'community-reply'
-
-
-    
   };
   export default API;

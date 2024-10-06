@@ -1,6 +1,6 @@
-'use client'
-import Link from 'next/link'
-import CustomModal from '../common/CustomModal'
+"use client"
+import Link from "next/link"
+import CustomModal from "../common/CustomModal"
 
 export default function ExamModal({ href }: any) {
     const userToken = false

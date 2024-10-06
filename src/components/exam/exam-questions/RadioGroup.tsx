@@ -1,12 +1,7 @@
 'use client'
 import CustomInput from '@/components/common/CustomInput'
-import { TAnswer } from '../type'
+import { RadioGroupProps, TAnswer } from '../type'
 import useUserAnswersStore from '@/store/useUserAnswers'
-
-type RadioGroupProps = {
-    answers: TAnswer[]
-    questionId: string
-}
 
 const RadioGroup = ({ answers, questionId }: RadioGroupProps) => {
     const { userAnswers, setUserAnswer } = useUserAnswersStore()
@@ -14,7 +9,6 @@ const RadioGroup = ({ answers, questionId }: RadioGroupProps) => {
     const handleAnswers = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserAnswer(questionId, e.target.value)
     }
-    console.log(userAnswers)
     return (
         <article>
             {answers.map((answer: TAnswer) => (

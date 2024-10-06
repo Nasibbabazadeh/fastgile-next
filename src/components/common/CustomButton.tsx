@@ -1,26 +1,29 @@
 import React from 'react'
 
-type ButtonVariant = 'primary' | 'secondary' | 'danger'
-type ButtonSize = 'small' | 'medium'
+export type TButtonVariant = 'primary' | 'secondary' | 'danger' | 'exam'
+export type TButtonSize = 'small' | 'medium' | 'extra-small' | 'xs'
 
 interface CustomButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    variant: ButtonVariant
-    size: ButtonSize
+    variant: TButtonVariant
+    size: TButtonSize
     children: React.ReactNode
-    onClick: () => void
+    onClick: any
     disabled: boolean
     className: string
 }
 
-const getButtonClasses = (variant: ButtonVariant = 'primary', size: ButtonSize = 'small', disabled: boolean = false) => {
+const getButtonClasses = (variant: TButtonVariant = 'primary', size: TButtonSize = 'small', disabled: boolean = false) => {
     const baseStyles = 'font-semibold rounded-sm transition duration-300 ease-in-out'
     const variantStyles = {
         primary: 'text-white bg-custom-gradient-button shadow-custom-button-shadow hover:bg-raging-leaf',
         secondary: 'border-x-[1px] border-b-4 border-t-[1px] border-[#313131] rounded-xs flex items-center gap-2',
-        danger: 'rounded-[4px] border-b-4 border-b-[#D00000] py-1 px-2 bg-[#FB1230] hover:bg-red-600 transition-all ease-linear font-semibold  text-white text-xs',
+        exam: 'py-3 px-8  bg-raging-leaf text-white rounded-lg',
+        danger: 'rounded-[4px] border-b-4 border-b-[#D00000]  bg-[#FB1230] hover:bg-red-600 transition-all ease-linear font-semibold  text-white ',
     }
     const sizeStyles = {
+        'extra-small': 'px-4 py-[6px] text-xs',
         small: 'px-4 py-2 text-sm',
+        xs: 'py-3 px-8',
         medium: 'px-10 py-4 text-lg-2',
     }
     const disabledStyles = disabled && 'opacity-50 cursor-not-allowed'
