@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image"
+import Link from "next/link"
 
 export interface TResourceData {
     id: string
@@ -14,10 +14,10 @@ const ResourceComponent = ({ resource, href }: { resource: TResourceData; href: 
         <Link
             href={href}
             key={resource.id}
-            className="w-full px-12 py-6 flex justify-between items-center border-l-4 border-l-[#EC8F42] rounded-md"
-            style={{ boxShadow: '0px 2px 8px 0px #136A9B26' }}
+            className="w-full px-12 py-6 flex justify-between items-center border-l-4 border-l-[#EC8F42] rounded-md sm:flex-col-reverse sm:justify-normal sm:gap-6"
+            style={{ boxShadow: "0px 2px 8px 0px #136A9B26" }}
         >
-            <article className="flex flex-col gap-2">
+            <article className="flex flex-col gap-2 sm:max-w-[267px]">
                 <h3 className="text-lg-2 font-bold">{resource.title}</h3>
                 <p className="text-sm text-gray-30">{resource.contentOfArticle}</p>
             </article>
