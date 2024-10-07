@@ -1,12 +1,12 @@
-import { LeftArrow, RightArrow } from '@/assets'
-import API from '@/http/api'
-import Link from 'next/link'
-import { TestQuestionProps, TExamData } from '../type'
-import AllQuestionsModal from './exam-modals/AllQuestionsModal'
-import ExitExamModal from './exam-modals/ExitExamModal'
-import SelectedQuestionsModal from './exam-modals/SelectedQuestionsModal'
-import RadioGroup from './RadioGroup'
-import EndExamModal from './exam-modals/EndExamModal'
+import { LeftArrow, RightArrow } from "@/assets"
+import API from "@/http/api"
+import Link from "next/link"
+import { TestQuestionProps, TExamData } from "../type"
+import AllQuestionsModal from "./exam-modals/AllQuestionsModal"
+import ExitExamModal from "./exam-modals/ExitExamModal"
+import SelectedQuestionsModal from "./exam-modals/SelectedQuestionsModal"
+import RadioGroup from "./RadioGroup"
+import EndExamModal from "./exam-modals/EndExamModal"
 
 export default async function ExamComponent({ questionNumber, type }: TestQuestionProps): Promise<JSX.Element> {
     const question = questionNumber || 1
@@ -15,10 +15,10 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
     const endIndex = startIndex + limit
 
     async function getData() {
-        'use server'
+        "use server"
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${API.exam_questions}?level=${type}`, {
             next: {
-                revalidate: 3600,
+                revalidate: 600,
             },
         })
         const data = await response.json()
@@ -39,7 +39,7 @@ export default async function ExamComponent({ questionNumber, type }: TestQuesti
                     <ExitExamModal />
                 </div>
                 {/* Selected AND All Questions */}
-                <div className="flex justify-between relative">
+                <div className="flex justify-between">
                     <SelectedQuestionsModal indexOfQuestion={questionNumber} questionDescription={paginatedData[0]?.description} />
                     <AllQuestionsModal type={type} />
                 </div>

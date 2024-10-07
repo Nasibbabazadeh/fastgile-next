@@ -1,12 +1,12 @@
-import { DoubleArrowRight, PlayArrow, RightArrowIcon } from '@/assets'
-import CustomModal from '@/components/common/CustomModal'
-import API from '@/http/api'
-import { TExamData } from '../../type'
-import Link from 'next/link'
+import { DoubleArrowRight, PlayArrow, RightArrowIcon } from "@/assets"
+import CustomModal from "@/components/common/CustomModal"
+import API from "@/http/api"
+import { TExamData } from "../../type"
+import Link from "next/link"
 
 export default async function SelectedQuestionsModal({ type }: { type: string }) {
     async function getData() {
-        'use server'
+        "use server"
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${API.exam_questions}?level=${type}`, {
             next: {
                 revalidate: 3600,

@@ -1,10 +1,10 @@
-'use client'
-import CustomButton from '@/components/common/CustomButton'
-import CustomModal from '@/components/common/CustomModal'
-import getResultData from '@/services/resultDataService'
-import useUserAnswersStore from '@/store/useUserAnswers'
-import { useRouter } from 'next/navigation'
-import { TExamData } from '../../type'
+"use client"
+import CustomButton from "@/components/common/CustomButton"
+import CustomModal from "@/components/common/CustomModal"
+import getResultData from "@/services/resultDataService"
+import useUserAnswersStore from "@/store/useUserAnswers"
+import { useRouter } from "next/navigation"
+import { TExamData } from "../../type"
 
 export default function EndExamModal({ examData }: { examData: TExamData[] }) {
     const userAnswers = useUserAnswersStore().userAnswers
@@ -12,8 +12,8 @@ export default function EndExamModal({ examData }: { examData: TExamData[] }) {
     const userAnswersCount = Object.keys(userAnswers).length
     const resultHandle = async () => {
         const data = await getResultData(userAnswers, examData)
-        localStorage.setItem('exam-result-data', JSON.stringify(data))
-        router.push('./result')
+        localStorage.setItem("exam-result-data", JSON.stringify(data))
+        router.push("./result")
     }
     return (
         <CustomModal
