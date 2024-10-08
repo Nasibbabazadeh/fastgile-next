@@ -36,9 +36,9 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
 
     return (
         <>
-            <button onClick={handleSelectedQuestions} className="flex items-center gap-2 bg-none">
+            <button onClick={handleSelectedQuestions} className="flex items-center gap-2 bg-none absolute">
                 <FlagIcon alt="flag-icon" />
-                <span className="text-md text-[#0094E8] font-medium text-nowrap underline underline-offset-8">
+                <span className="text-md text-[#0094E8] font-medium text-nowrap underline underline-offset-8 hidden">
                     {selectedQuestions.find((question) => question.index === indexOfQuestion) ? "Sualı sil" : "Sualı işarələ"}
                 </span>
             </button>
@@ -48,7 +48,7 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
                 buttonContent={
                     <>
                         <FlagIcon alt="flag-icon" />
-                        <span className="text-sm text-[#313131] font-medium">İşarələnmiş Suallar</span>
+                        <span className="text-sm text-[#313131] font-medium xs:text-xs text-nowrap">İşarələnmiş Suallar</span>
                     </>
                 }
                 variant="secondary"
@@ -59,6 +59,7 @@ export default function SelectedQuestionsModal({ indexOfQuestion, questionDescri
                     </div>
                 }
                 exitStyle="absolute right-14"
+                buttonStyle="sm:px-2 py-2"
                 modalStyle="h-[600px] w-[724px] overflow-auto rounded-[20px] shadow-exam-card bg-white relative flex flex-col gap-8 mt-6 p-8"
             >
                 <div className="flex justify-between">

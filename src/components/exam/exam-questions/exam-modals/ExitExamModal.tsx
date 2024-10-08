@@ -19,7 +19,7 @@ export default function ExitExamModal() {
                 modalStyle="h-[220px] shadow-exam-card bg-white rounded-xs p-10 relative"
                 exitContent={"Xeyir"}
                 exitStyle="absolute bottom-5 right-5"
-                buttonStyle="py-1 px-2 text-xs"
+                buttonStyle="py-1 px-2 text-xs sm:absolute sm:top-5"
                 buttonSize="extra-small"
             >
                 <div>

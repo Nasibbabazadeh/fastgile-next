@@ -20,11 +20,12 @@ export default async function SelectedQuestionsModal({ type }: { type: string })
         <CustomModal
             buttonContent={
                 <>
-                    <span className="text-sm text-[#313131] font-medium">Bütün Suallar</span>
+                    <span className="text-sm text-[#313131] font-medium sm:text-xs text-nowrap">Bütün Suallar</span>
                     <DoubleArrowRight alt="double-arrow" />
                 </>
             }
             variant="secondary"
+            buttonStyle="sm:px-1 py-2"
             exitContent={
                 <div className="flex items-center gap-1">
                     <span className="text-sm text-raging-leaf font-medium">Bağla</span>
@@ -32,7 +33,7 @@ export default async function SelectedQuestionsModal({ type }: { type: string })
                 </div>
             }
             exitStyle=" absolute right-14"
-            modalStyle="h-[600px] overflow-auto rounded-[20px] shadow-exam-card bg-white relative flex flex-col gap-8 mt-6 p-8"
+            modalStyle="h-[600px] overflow-auto rounded-[20px] shadow-exam-card bg-white relative flex flex-col gap-8 mt-6 p-8 "
         >
             <div className="flex justify-between">
                 <h6 className="text-md font-medium ml-3">Naviqasiya etmək üçün suala klikləyin:</h6>

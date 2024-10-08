@@ -19,7 +19,7 @@ export default function RadioGroup({ answers, questionId }: RadioGroupProps) {
                     <div
                         key={answer.id}
                         className={`flex-col px-4 py-4 border-2 rounded-[20px] flex gap-4 my-4 transition-all ease-linear 
-                        ${isChecked ? "border-orange-60" : "border-[#D0D0E3]"}`}
+                        ${isChecked ? "border-orange-60" : "border-[#D0D0E3]"} sm:px-2 sm:py-2`}
                     >
                         <CustomInput
                             type="radio"
@@ -29,7 +29,7 @@ export default function RadioGroup({ answers, questionId }: RadioGroupProps) {
                             handleChange={handleAnswers}
                             value={answer.id}
                             checked={isChecked}
-                            labelStyle="text-sm text-nowrap sm:text-wrap text-start flex gap-3 items-center hover:cursor-pointer"
+                            labelStyle="text-sm text-nowrap sm:text-wrap text-start flex gap-3 items-center hover:cursor-pointer  sm:text-xs"
                         />
                     </div>
                 )
