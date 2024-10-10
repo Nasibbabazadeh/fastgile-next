@@ -1,13 +1,12 @@
 "use client"
 import CustomButton from "@/components/common/CustomButton"
+import AuthRegisterService from "@/services/authService"
 import { useFormik } from "formik"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/ReactToastify.min.css"
 import CustomAuthInput from "../CustomAuthInput"
 import { RegisterSchema } from "./schema"
-import AuthRegisterService from "@/services/authService"
 export default function AuthRegister() {
     const formik = useFormik({
         initialValues: {
@@ -20,8 +19,9 @@ export default function AuthRegister() {
             terms: false,
             remember: false,
         },
-        onSubmit: (values) => {
-            AuthRegisterService(values)
+        onSubmit: async (values) => {
+            const response = await AuthRegisterService(values)
+            // response.message === "Successfully" ? ro
         },
         validationSchema: RegisterSchema,
         validateOnChange: true,

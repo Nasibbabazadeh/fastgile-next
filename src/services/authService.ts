@@ -1,4 +1,6 @@
 import API from "@/http/api";
+import { redirect } from "next/dist/server/api-utils";
+import { toast } from "react-toastify";
  interface RegisterUserParams {
     name: string;
     surname: string;
@@ -38,10 +40,8 @@ export default async function AuthRegisterService({name,surname,nickname,email,p
         if (response.status === 400) {
           console.log(response)
         }
-        else if (response.status === 200) {
-          const data = await response.json();
-          console.log(response)
-          return data;
+        else if (response.ok) {
+          return response.json()
         }
       } catch (error) {
         console.log(error)
