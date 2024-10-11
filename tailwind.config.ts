@@ -30,7 +30,9 @@ const config: Config = {
         'dot-shadow':'0px 18px 40px -12px #FF75B759',
         'resource-card':' 0px 2px 8px 0px #136A9B26',
         'exam-card': '0px 4px 40px 0px #00000040',
-        'exam-info':' 3px 4px 12px 1px #00000040'
+        'exam-info':' 3px 4px 12px 1px #00000040',
+        'community-dt-shadow':'4px 4px 10px 1px #00000026',
+        'question-reply-shadow':'0px 0px 20px 1px #00000026'
       },
       backgroundImage: {
         'custom-gradient-button': 'linear-gradient(95.34deg, #FF6E14 0%, rgba(255, 142, 0, 0.7) 100%)',
@@ -48,7 +50,6 @@ const config: Config = {
         'raging-leaf':'#DC5400',
         'white-secondary':'#EAEAEA80',
         'orange-300' :'rgba(255, 110, 20, 0.7)',
-        'orange-500' :'#DC5400',
         'blue-500':'#3EBDFF'
 
       },
