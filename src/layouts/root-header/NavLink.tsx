@@ -59,7 +59,7 @@ export default function NavLinkComponent() {
                 </ul>
                 <ul className="flex items-center gap-2 text-nowrap sm:flex-col sm:h-[80px] sm:justify-between ">
                     <li>
-                        <Link href="/login" className="rounded-sm py-[10px] px-[33px]  bg-orange-60 text-white font-medium md:px-5 xl:px-6">
+                        <Link href="/register" className="rounded-sm py-[10px] px-[33px]  bg-orange-60 text-white font-medium md:px-5 xl:px-6">
                             Qeydiyyat
                         </Link>
                     </li>

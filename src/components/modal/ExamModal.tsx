@@ -8,7 +8,7 @@ export default function ExamModal({ href }: any) {
         <>
             <CustomModal
                 buttonContent="Başla"
-                modalStyle="p-8 sm:w-full sm:p-1 relative"
+                modalStyle="sm:w-full sm:p-1 relative"
                 exitContent="X"
                 exitStyle="text-[24px] absolute right-4 top-4 text-red-800"
             >

@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "../globals.css"
-import RootHeader from "@/components/layouts/root-header/RootHeader"
-import RootFooter from "@/components/layouts/root-footer/RootFooter"
+import RootHeader from "@/layouts/root-header/RootHeader"
+import RootFooter from "@/layouts/root-footer/RootFooter"
 
 const roboto = localFont({
     src: [
@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${roboto.variable}  antialiased font-roboto`}>
+            <body className={`${roboto.variable}  antialiased font-roboto`} suppressHydrationWarning={true}>
                 <RootHeader />
                 <main>{children}</main>
                 <RootFooter />

@@ -3,7 +3,7 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'https',
+                protocol: "https",
                 hostname: `scrum-quiz-app-abeb643fd7fa.herokuapp.com`,
             },
         ],
@@ -11,11 +11,12 @@ const nextConfig = {
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
-            use: ['@svgr/webpack'],
+            use: ["@svgr/webpack"],
         })
 
         return config
     },
+    compress: true,
 }
 
 export default nextConfig

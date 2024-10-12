@@ -30,7 +30,7 @@ export default function AuthRegister() {
 
     return (
         <div className="max-w-[700px] xl:max-w-[620px]  w-full bg-[#F9F9F9] rounded-md border-l-[3px] border-l-orange-60 py-8 relative flex flex-col items-center sm:border-none">
-            <form onSubmit={handleSubmit} className="w-full px-8 flex flex-col gap-4 sm:gap-[18px] sm:px-4">
+            <form onSubmit={handleSubmit} className="w-full px-8 flex flex-col gap-[22px] sm:gap-[18px] sm:px-4">
                 <h3 className="text-[47px] leading-[56px] text-[#171717] font-semibold mb-3 sm:text-header5 sm:text-center sm:text-xl-3">
                     Qeydiyyat
                 </h3>

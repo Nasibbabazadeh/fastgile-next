@@ -1,4 +1,4 @@
-import SharedHeader from "@/components/layouts/shared-header/SharedHeader"
+import SharedHeader from "@/layouts/shared-header/SharedHeader"
 import "../globals.css"
 
 export const metadata = {
@@ -9,9 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body>
+            <body suppressHydrationWarning={true}>
                 <SharedHeader />
-                <main className="flex justify-around items-center xl:mx-10 pt-10 sm:pt-0 sm:mx-5">
+                <main className="flex justify-around items-center xl:mx-10 pt-5 sm:pt-0 sm:mx-5">
                     {children}
                     <section className="bg-auth-bg max-w-[500px] h-[500px] bg-contain bg-no-repeat w-full  xl:max-w-[450px] md:hidden sm:hidden"></section>
                 </main>

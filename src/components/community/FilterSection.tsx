@@ -34,6 +34,8 @@ export default function FilterSection() {
                         className="w-full border-2 border-[#D0D0E3] py-3 px-5 focus:outline-none rounded-sm"
                         onChange={handleSearchChange}
                         value={searchTerm}
+                        id="filter-input"
+                        name="filter-input"
                     />
                     <button type="submit" className="absolute right-2 top-2">
                         <SearchIcon />
