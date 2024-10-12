@@ -44,7 +44,7 @@ export default function CommunityDetails() {
 
     if (response) {
         return (
-            <div className="max-w-[1193px] mx-auto flex flex-col gap-12  ">
+            <div className="max-w-[1193px] mx-auto flex flex-col gap-12 sm:mx-5 md:mx-8 xl:mx-10 ">
                 <ToastContainer />
                 <section className="h-[155px] w-full flex flex-col items-end gap-6">
                     <div className="flex items-center">
@@ -56,7 +56,7 @@ export default function CommunityDetails() {
                     <div className="px-4 py-6 w-full h-[105px] shadow-community-dt-shadow rounded-md bg-white flex gap-4 items-center">
                         <div className="w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain  bg-avatar-2 bg-no-repeat"></div>
                         <div className="flex flex-col gap-1 relative w-full">
-                            <h6 className="text-xl text-text-color font-bold">
+                            <h6 className="text-xl text-text-color font-bold sm:text-md">
                                 {response.ownerFirstName}
                                 {response.ownerSurname}
                             </h6>
@@ -69,11 +69,11 @@ export default function CommunityDetails() {
                 </section>
                 <section className="relative flex sm:flex-col">
                     <article className="flex flex-col gap-7 max-w-[640px] w-full ">
-                        <h3 className="text-[30px] leading-9 text-text-color font-semibold">{decodedTitle}</h3>
-                        <div className="flex justify-between items-center px-4 py-6 w-[640px] shadow-exam-card rounded-md bg-white z-50">
+                        <h3 className="text-[30px] leading-9 text-text-color font-semibold sm:text-xl">{decodedTitle}</h3>
+                        <div className="flex justify-between items-center px-4 py-6 max-w-[640px] shadow-exam-card rounded-md bg-white z-10">
                             <div className="flex items-center gap-4">
                                 <QuestionVector alt="question-vector" />
-                                <p className="leading-6 font-semibold  ">{response.communityDescription}</p>
+                                <p className="leading-6 font-semibold text-wrap">{response.communityDescription}</p>
                             </div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path

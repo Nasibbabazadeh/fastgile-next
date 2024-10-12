@@ -27,7 +27,7 @@ export default function FilterSection() {
 
     return (
         <>
-            <section className="max-w-[1184px] mx-auto flex justify-between my-16 h-[51px]">
+            <section className="max-w-[1184px] mx-auto flex justify-between my-16 h-[51px] sm:my-8">
                 <form className="w-[68%] relative" onSubmit={setTermHandler}>
                     <input
                         placeholder="Axtar"

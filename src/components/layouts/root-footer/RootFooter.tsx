@@ -2,7 +2,7 @@ import { LinkedinIcon, LinkedinVector } from "@/assets"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Footer() {
+export default function RootFooter() {
     return (
         <footer className="bg-[#2D2D2D] h-[150px] flex items-center mt-7">
             <div className="max-w-[1264px] w-full mx-auto flex justify-between text-white items-center md:mx-5 sm:justify-center">

@@ -20,7 +20,7 @@ export default async function CommunityPage({ params }: { params: { page: number
     const isPrevDisabled = page <= 0
     const isNextDisabled = page >= totalPages - 1
     return (
-        <div className="sm:mx-5 md:mx-8">
+        <>
             <FilterSection />
             <section className="max-w-[1184px] w-full mx-auto gap-6 flex flex-col items-end sm:items-center">
                 {communityData &&
@@ -30,6 +30,6 @@ export default async function CommunityPage({ params }: { params: { page: number
 
                 <ContentNav next={`./${page + 1}`} prev={`./${page - 1}`} isPrevDisabled={isPrevDisabled} isNextDisabled={isNextDisabled} />
             </section>
-        </div>
+        </>
     )
 }

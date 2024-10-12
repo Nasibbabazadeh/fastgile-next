@@ -22,7 +22,7 @@ const CommunityComponent = ({ question, index }: CommunityQuestionProps) => {
         <Link
             href={`/community/${question.id}/${question.title}`}
             key={question.id}
-            className="w-full h-[179px] px-10 py-7 flex flex-col gap-4 rounded-md border-l-4 border-l-raging-leaf hover:bg-[#FFF4EE] hover:cursor-pointer transition-all ease-linear"
+            className="w-full h-[179px] px-10 pt-7 flex flex-col gap-4 rounded-md border-l-4 border-l-raging-leaf hover:bg-[#FFF4EE] hover:cursor-pointer transition-all ease-linear sm:px-2 "
             style={{ boxShadow: "0px 2px 8px 0px #136A9B26" }}
         >
             <article className="flex justify-between text-nowrap items-center">

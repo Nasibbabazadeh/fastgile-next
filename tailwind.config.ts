@@ -38,6 +38,7 @@ const config: Config = {
         'custom-gradient-button': 'linear-gradient(95.34deg, #FF6E14 0%, rgba(255, 142, 0, 0.7) 100%)',
         'avatar-1': "url('/static/avatar-1.png')",
         'avatar-2': "url('/static/avatar-2.png')",
+        'auth-bg':"url('/static/home-illustration.svg')",
       },
       colors: {
         white : '#fff',

@@ -15,7 +15,7 @@ interface CustomButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttr
 const getButtonClasses = (variant: TButtonVariant = "primary", size: TButtonSize = "small", disabled: boolean = false) => {
     const baseStyles = "font-semibold rounded-sm transition duration-300 ease-in-out"
     const variantStyles = {
-        primary: "text-white bg-custom-gradient-button shadow-custom-button-shadow hover:bg-raging-leaf",
+        primary: "text-white bg-custom-gradient-button  hover:bg-raging-leaf",
         secondary: "border-x-[1px] border-b-4 border-t-[1px] border-[#313131] rounded-xs flex items-center gap-2",
         exam: "py-3 px-8  bg-raging-leaf text-white rounded-lg",
         danger: "rounded-[4px] border-b-4 border-b-[#D00000]  bg-[#FB1230] hover:bg-red-600 transition-all ease-linear font-semibold  text-white ",

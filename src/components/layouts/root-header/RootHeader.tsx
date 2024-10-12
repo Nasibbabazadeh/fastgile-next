@@ -3,9 +3,9 @@ import NavLinkComponent from "./NavLink"
 import Image from "next/image"
 import CustomModal from "@/components/common/CustomModal"
 
-export default function CommonHeader() {
+export default function RootHeader() {
     return (
-        <header className="max-w-[1385px] mx-auto flex justify-between items-center my-6 font-roboto md:mx-5 xl:mx-6 sm:mx-5">
+        <header className="max-w-[1385px] mx-auto flex justify-between items-center mt-6 font-roboto md:mx-5 xl:mx-6 sm:mx-5 sm:mt-3">
             <Link href="/" className="flex gap-1 items-end text-nowrap">
                 <Image src="/static/fastgile-icon.svg" alt="fastgile-icon" width={65} height={60} className="md:w-14 md:h-12" />
                 <div className="flex flex-col gap-1 relative top-1">

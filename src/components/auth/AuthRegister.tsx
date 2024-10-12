@@ -29,10 +29,12 @@ export default function AuthRegister() {
     const { handleSubmit, errors, touched, dirty, isValid } = formik
 
     return (
-        <div className="w-[40%] bg-[#F9F9F9] rounded-md border-l-[3px] border-l-orange-60 py-8 relative flex flex-col items-center sm:border-none overflow-hidden">
-            <form onSubmit={handleSubmit} className="w-full px-8 flex flex-col gap-8 sm:gap-3">
-                <h3 className="text-[47px] leading-[56px] text-[#171717] font-semibold mb-3 sm:text-header5 sm:text-center">Qeydiyyat</h3>
-                <div className="flex gap-3 sm:flex-col sm:gap-4">
+        <div className="max-w-[700px] xl:max-w-[620px]  w-full bg-[#F9F9F9] rounded-md border-l-[3px] border-l-orange-60 py-8 relative flex flex-col items-center sm:border-none">
+            <form onSubmit={handleSubmit} className="w-full px-8 flex flex-col gap-4 sm:gap-[18px] sm:px-4">
+                <h3 className="text-[47px] leading-[56px] text-[#171717] font-semibold mb-3 sm:text-header5 sm:text-center sm:text-xl-3">
+                    Qeydiyyat
+                </h3>
+                <div className="flex justify-between sm:flex-col sm:gap-[18px]">
                     <CustomAuthInput
                         id="name"
                         htmlId="name"
@@ -50,7 +52,7 @@ export default function AuthRegister() {
                         {...formik.getFieldProps("surname")}
                     />
                 </div>
-                <div className="flex gap-3 sm:flex-col sm:gap-4">
+                <div className="flex  sm:flex-col sm:gap-[18px]">
                     <CustomAuthInput
                         id="nickname"
                         htmlId="nickname"
@@ -68,7 +70,7 @@ export default function AuthRegister() {
                         {...formik.getFieldProps("email")}
                     />
                 </div>
-                <div className="flex gap-3 sm:flex-col sm:gap-4">
+                <div className="flex  sm:flex-col sm:gap-[18px]">
                     <CustomAuthInput
                         id="password"
                         htmlId="password"
@@ -103,7 +105,7 @@ export default function AuthRegister() {
                         </label>
                     </div>
                 </div>
-                <CustomButton type="submit" disabled={!isValid || !dirty} className="px-10 py-4 sm:py-3 sm:px-4 rounded-md bg-orange-60 mt-2 ">
+                <CustomButton type="submit" disabled={!isValid || !dirty} className="mt-2 sm:text-md">
                     Qeydiyyatdan keç
                 </CustomButton>
             </form>

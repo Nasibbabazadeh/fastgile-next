@@ -12,11 +12,10 @@ export default async function ResoursePage({ params }: { params: { page: number 
     const isNextDisabled = page >= totalPages - 1
 
     return (
-        <section className="max-w-[1184px] mx-auto flex flex-col gap-8 items-end sm:items-center sm:mx-5 sm:mt-10">
+        <section className="max-w-[1184px] mx-auto flex flex-col gap-8 items-end sm:items-center">
             <article className="w-full relative left-12 top-4 sm:hidden">
                 <h3 className="text-xl-3 text-raging-leaf font-medium">Ən Son Məqalələr</h3>
             </article>
-
             {resourceData &&
                 resourceData.map((resource: TResourceData) => (
                     <ResourceComponent key={resource.id} resource={resource} href={`./${page}/${resource.id}`} />
