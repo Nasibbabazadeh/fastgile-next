@@ -1,7 +1,6 @@
 "use client"
 import { QuestionVector, ReplyVector, RightArrowIcon } from "@/assets"
 import CustomButton from "@/components/common/CustomButton"
-import CustomInput from "@/components/common/CustomInput"
 import { getQuestionDetails, replyQuestionById } from "@/services/communityService"
 import Link from "next/link"
 import { useParams } from "next/navigation"
@@ -45,7 +44,6 @@ export default function CommunityDetails() {
     if (response) {
         return (
             <div className="max-w-[1193px] mx-auto flex flex-col gap-12 sm:mx-5 md:mx-8 xl:mx-10 ">
-                <ToastContainer />
                 <section className="h-[155px] w-full flex flex-col items-end gap-6">
                     <div className="flex items-center">
                         <Link href="/community/0" className="text-md text-raging-leaf font-semibold">
@@ -54,7 +52,7 @@ export default function CommunityDetails() {
                         <RightArrowIcon alt="arrow-right" />
                     </div>
                     <div className="px-4 py-6 w-full h-[105px] shadow-community-dt-shadow rounded-md bg-white flex gap-4 items-center">
-                        <div className="w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain  bg-avatar-2 bg-no-repeat"></div>
+                        <div className="w-full max-w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain  bg-avatar-2 bg-no-repeat"></div>
                         <div className="flex flex-col gap-1 relative w-full">
                             <h6 className="text-xl text-text-color font-bold sm:text-md">
                                 {response.ownerFirstName}
@@ -72,7 +70,9 @@ export default function CommunityDetails() {
                         <h3 className="text-[30px] leading-9 text-text-color font-semibold sm:text-xl">{decodedTitle}</h3>
                         <div className="flex justify-between items-center px-4 py-6 max-w-[640px] shadow-exam-card rounded-md bg-white z-10">
                             <div className="flex items-center gap-4">
-                                <QuestionVector alt="question-vector" />
+                                <div className="w-6 h-6">
+                                    <QuestionVector alt="question-vector" />
+                                </div>
                                 <p className="leading-6 font-semibold text-wrap">{response.communityDescription}</p>
                             </div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,15 +86,14 @@ export default function CommunityDetails() {
                             </svg>
                         </div>
                     </article>
-
                     <div className="flex flex-col gap-8  max-w-[647px] w-full">
-                        <div className="  shadow-question-reply-shadow  bg-[#FFF7F3] rounded-md pl-[100px] py-10 flex flex-col gap-8">
+                        <div className="shadow-question-reply-shadow  bg-[#FFF7F3] rounded-md pl-[100px] py-10 flex flex-col gap-8 sm:pl-10">
                             <span className="leading-7 font-medium text-raging-leaf">{response.replyCount} Cavab</span>
                             {response.communityReplyList &&
                                 response.communityReplyList.map((data: any, index: number) => {
                                     return (
                                         <div className="max-w-[501px] flex gap-4" key={index}>
-                                            <div className="w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain  bg-avatar-2 bg-no-repeat"></div>
+                                            <div className="w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain bg-avatar-2 bg-no-repeat"></div>
                                             <div className="max-w-[445px] flex flex-col gap-[10px]">
                                                 <div className="flex gap-2 items-center">
                                                     <h6 className="text-base font-semibold ">{`${data.firstName} ${data.surname}`}</h6>
@@ -115,7 +114,7 @@ export default function CommunityDetails() {
 
                         <section className="flex flex-col gap-4 items-end">
                             <div className="flex items-center gap-[15px] w-full">
-                                <div className="w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain  bg-avatar-2 bg-no-repeat"></div>
+                                <div className="w-full max-w-[50px] h-[50px] border-[3px] border-avatar-border bg-[#EF9F48] rounded-[50%] bg-contain  bg-avatar-2 bg-no-repeat"></div>
                                 <input
                                     type="text"
                                     id="reply"
@@ -132,6 +131,7 @@ export default function CommunityDetails() {
                         </section>
                     </div>
                 </section>
+                <ToastContainer />
             </div>
         )
     }

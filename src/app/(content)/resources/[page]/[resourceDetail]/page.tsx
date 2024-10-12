@@ -22,7 +22,10 @@ export default async function ResourceDetailsPage({ params }: { params: TParams 
     }
     const descriptionData = detailedData.description.split("\n").filter((item: string) => item !== "")
     return (
-        <div className="flex flex-col  my-14 items-start max-w-[996px] mx-auto sm:gap-7">
+        <div
+            className="flex flex-col  my-14 items-start max-w-[996px] mx-auto sm:gap-7 
+        "
+        >
             <Link href="./" className=" flex items-center gap-2 relative  sm:left-5">
                 <LeftArrow fill="" />
                 <span className="text-lg text-orange-60 font-bold ">Geri</span>

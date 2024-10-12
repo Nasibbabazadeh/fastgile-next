@@ -19,7 +19,7 @@ export default function NavLinkComponent() {
 
     return (
         <>
-            <div className=" justify-end pr-4 absolute right-5 z-50 hidden sm:flex">
+            <div className=" justify-end pr-4 absolute right-5 z-40 hidden sm:flex">
                 <button className="flex flex-col justify-between w-10 h-7 relative" onClick={handleMobileNavbar}>
                     <span
                         className={`block w-full h-[3px] bg-black rounded transition-transform duration-400 ease-linear ${
@@ -39,7 +39,7 @@ export default function NavLinkComponent() {
                 </button>
             </div>
             <nav
-                className={`w-[72%] h-10 flex justify-between text-nowrap sm:flex-col sm:w-[259px] sm:h-[532px] sm:absolute sm:right-0 sm:z-40 sm:shadow-exam-card sm:bg-white sm:top-0 sm:rounded-sm sm:gap-14 sm:justify-normal sm:pt-28 transition-transform duration-300 sm:px-5 ${
+                className={`w-[72%] h-10 flex justify-between text-nowrap sm:flex-col sm:w-[259px] sm:h-[532px] sm:absolute sm:right-0 sm:z-30 sm:shadow-exam-card sm:bg-white sm:top-0 sm:rounded-sm sm:gap-14 sm:justify-normal sm:pt-28 transition-transform duration-300 sm:px-5 ${
                     mobileNavlink ? "sm:translate-x-0" : "sm:hidden"
                 }`}
             >

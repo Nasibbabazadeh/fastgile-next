@@ -19,11 +19,11 @@ export default function AskQuestionModal() {
             buttonContent="Sual soruş"
             buttonStyle="flex items-center text-nowrap bg-[#FF6E14] shadow-none sm:text-[14px] sm:leading-4 sm:px-4"
             exitContent="X"
-            modalStyle="w-[648px] bg-white p-10 rounded-md relative"
+            modalStyle="w-[648px] bg-white p-10  h-full rounded-md relative z-50"
             exitStyle="absolute right-8 top-4 text-[24px] font-bold"
         >
             <form
-                className="w-full px-[50px] mx-auto shadow-ask-question rounded-[20px] bg-orange-bg flex  items-center relative"
+                className="w-full px-[50px] mx-auto shadow-ask-question rounded-[20px] bg-orange-bg flex  items-center relative sm:px-2"
                 onSubmit={handleAskQuestion}
             >
                 <div className="w-full flex flex-col gap-7">
